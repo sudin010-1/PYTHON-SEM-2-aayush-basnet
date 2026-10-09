@@ -1,10 +1,8 @@
-# 1. Username Generator
-# Ask the user to enter their full name and create a username by
-# removing extra spaces, converting to lowercase and joining words with "_".
+name = input("Enter your full name: ")
 
-full_name = input("Enter your full name: ")
-
-words = full_name.split()          # split() removes all extra spaces
-username = "_".join(words).lower()
+name = name.strip()
+words = name.split()
+username = "_".join(words)
+username = username.lower()
 
 print("Username:", username)

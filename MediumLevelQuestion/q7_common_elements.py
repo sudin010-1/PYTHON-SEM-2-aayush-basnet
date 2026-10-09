@@ -1,15 +1,20 @@
-# 7. Common Elements
-
 list1 = [10, 20, 30, 40, 50, 60]
 list2 = [30, 40, 50, 70, 80, 90]
 
-set1 = set(list1)
-set2 = set(list2)
+both = []
+only1 = []
+only2 = []
 
-common = sorted(set1 & set2)       # intersection
-only_list1 = sorted(set1 - set2)   # difference
-only_list2 = sorted(set2 - set1)
+for i in list1:
+    if i in list2:
+        both.append(i)
+    else:
+        only1.append(i)
 
-print("Values present in both lists:", common)
-print("Values present only in list1:", only_list1)
-print("Values present only in list2:", only_list2)
+for i in list2:
+    if i not in list1:
+        only2.append(i)
+
+print("Present in both lists:", both)
+print("Present only in list1:", only1)
+print("Present only in list2:", only2)

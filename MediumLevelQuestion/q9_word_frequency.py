@@ -1,13 +1,14 @@
-# 9. Word Frequency
-# "Apple" and "apple" are treated as the same word.
-
 sentence = input("Enter a sentence: ")
 
-words = sentence.lower().split()
-frequency = {}
+sentence = sentence.lower()
+words = sentence.split()
 
-for word in words:
-    frequency[word] = frequency.get(word, 0) + 1
+count = {}
+for w in words:
+    if w in count:
+        count[w] = count[w] + 1
+    else:
+        count[w] = 1
 
-for word, count in frequency.items():
-    print(word, ":", count)
+for w in count:
+    print(w, ":", count[w])
